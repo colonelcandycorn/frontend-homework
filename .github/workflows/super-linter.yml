@@ -15,6 +15,6 @@ jobs:
         with:
           fetch-depth: 0
       - name: Install modules
-        run: npm -i
+        run: npm install
       - name: Run ESLint
         run: eslint . --ext .js,.jsx,.ts,.tsx
