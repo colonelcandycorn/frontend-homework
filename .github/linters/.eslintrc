@@ -1,4 +1,9 @@
 {
-  "extends": "airbnb"
-  "browser": true
+  "extends": [
+    "airbnb",
+    "prettier"
+  ],
+  "plugins": [
+    "prettier"
+  ]
 }
