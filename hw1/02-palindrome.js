@@ -1,8 +1,23 @@
 const elem = document.querySelector("input");
 const palindromeText = document.getElementById("palindrome");
 
+const isPalindrome = (num) => {
+  let l = 0;
+  let r = num.length - 1;
+
+  while (l <= r) {
+    if (num[l] !== num[r]) {
+      l += 1;
+      r -= 1;
+      return false;
+    }
+  }
+
+  return true;
+};
+
 const handleInput = () => {
-  const value = elem.value;
+  const {value} = elem;
   palindromeText.innerText = "";
   palindromeText.classList.remove("text-success", "text-danger");
 
@@ -30,19 +45,6 @@ const handleInput = () => {
     palindromeText.innerText = "No. Try again.";
     palindromeText.classList.add("text-danger");
   }
-};
-
-const isPalindrome = (num) => {
-  let l = 0;
-  let r = num.length - 1;
-
-  while (l <= r) {
-    if (num[l++] !== num[r--]) {
-      return false;
-    }
-  }
-
-  return true;
 };
 
 elem.addEventListener("input", handleInput);
