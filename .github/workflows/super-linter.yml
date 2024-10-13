@@ -21,7 +21,7 @@ jobs:
       - name: Get changed files
         id: changed-files
         run: |
-          git diff --name-only > changed_files.txt
+          git diff --name-only --diff-filter=d origin/main...HEAD  > changed_files.txt
 
       - name: Run ESLint on changed files
         run: |
