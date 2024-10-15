@@ -7,17 +7,17 @@ const isPalindrome = (num) => {
 
   while (l <= r) {
     if (num[l] !== num[r]) {
-      l += 1;
-      r -= 1;
       return false;
     }
+    l += 1;
+    r -= 1;
   }
 
   return true;
 };
 
 const handleInput = () => {
-  const {value} = elem;
+  const { value } = elem;
   palindromeText.innerText = "";
   palindromeText.classList.remove("text-success", "text-danger");
 
