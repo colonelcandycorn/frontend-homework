@@ -88,6 +88,8 @@ const handleClick = function handleClick() {
     text.classList.add("card-text");
     return;
   }
+
+  // eslint-disable-next-line no-undef
   const results = characters.filter((character) =>
     character.name.toLowerCase().includes(searchValue.toLowerCase()),
   );
