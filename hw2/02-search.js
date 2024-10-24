@@ -3,8 +3,8 @@ const userInput = document.querySelector(".search-input");
 const searchButton = document.querySelector(".search-button");
 
 const createCardTitle = function createCardTitleWithHighlightedSearchText(
-    name,
-    searchText,
+  name,
+  searchText,
 ) {
   const cardTitle = document.createElement("h5");
   cardTitle.classList.add("card-title");
@@ -24,7 +24,6 @@ const createCardTitle = function createCardTitleWithHighlightedSearchText(
 
   return cardTitle;
 };
-
 
 const createResultCard = function createResultCard(result) {
   const card = document.createElement("div");
@@ -105,6 +104,14 @@ const handleClick = function handleClick() {
     createCardAndAddToRow(row, result);
     addedCount += 1;
   });
+
+  if (results.length === 0) {
+    const text = document.createTextNode("No results found");
+    cardContainer.classList.add("d-flex");
+    cardContainer.appendChild(text);
+    text.classList.add("card-text");
+    return;
+  }
 
   cardContainer.appendChild(row);
 };
