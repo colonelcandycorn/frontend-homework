@@ -5,7 +5,7 @@ const searchText = document.querySelector(".search-text");
 const handleKeyDown = () => {
   const paragraph = searchText.textContent;
   const searchWord = userInput.value;
-  const regEx = new RegExp(`(${searchWord})`, "gi");
+  const regEx = new RegExp(`\\b(${searchWord})\\b`, "gi");
   const searchParts =
     searchWord.length > 0 ? paragraph.split(regEx) : [paragraph];
 
